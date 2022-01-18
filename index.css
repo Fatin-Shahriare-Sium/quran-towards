@@ -11,15 +11,18 @@ html,body{
     position: relative;
     overflow: hidden;
     clip-path: circle(7%);
+    animation: removePath 1.7s forwards .3s;
     /* background-color:rgba(0,0,0, .9); */
 }
 .quran-logo{
-    width: 70px;
+    width: 47px;
     position: absolute;
     top: 50%;
     left: 50%;
+    clip-path: circle(50%);
     transform: translate(-50%,-50%);
     
+    animation: vanishLogo 1.5s ease forwards .3s;
     
 }
 .quran-video{
@@ -31,20 +34,79 @@ html,body{
 
 .quran-text{
     position: absolute;
-    top: 50%;
-    
+    top: 40%;
+    left: 3%;
+    z-index: 1;
     
     /* transform: translate(-50%,-50%); */
 }
 
 .quran-text p:nth-child(1){
-    color: wheat;
-    font-size: 5rem;
-    font-weight: 700;
+    color: #18e609;
+    font-size: 4rem;
+    font-weight: 900;
+    opacity: -5;
+    animation: bringHeadline .7s ease forwards 1s;
 }
 
 .quran-text p:nth-child(2){
     color: white;
-    font-size: 3rem;
+    font-size: 2.3rem;
+    font-weight: 700;
+    transform: translateX(-200%);
+    animation: backText 1s ease forwards 1.5s ;
+}
+.read-btn{
+    position: absolute;
+    font-size: 2rem;
+    bottom: 0%;
+    background-color: white;
+    color: black;
+    left: 3%;
+    border: none;
     font-weight: 500;
+    border-radius: 7px;
+    padding: 1rem 1rem;
+   animation: bringBtn .7s forwards 2s;
+   z-index: 1;
+   transition: all .3s ease;
+    
+}
+.read-btn:hover{
+    background-color: black;
+    color: white;
+}
+@keyframes removePath {
+    to{
+        clip-path: circle(77%);
+    }
+}
+
+@keyframes vanishLogo {
+    
+    to{
+        width: 0px;
+    }
+}
+
+@keyframes bringHeadline {
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes backText {
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes bringBtn {
+    0%{
+        transform: rotate(360deg)
+    }
+    100%{
+        transform: rotate(0deg);
+        bottom: 30%;
+    }
 }
