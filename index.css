@@ -11,7 +11,7 @@ html,body{
     position: relative;
     overflow: hidden;
     clip-path: circle(7%);
-    animation: removePath 1.7s forwards .3s;
+    animation: removePath 1.7s forwards .5s;
     /* background-color:rgba(0,0,0, .9); */
 }
 .quran-logo{
@@ -22,7 +22,7 @@ html,body{
     clip-path: circle(50%);
     transform: translate(-50%,-50%);
     
-    animation: vanishLogo 1.5s ease forwards .3s;
+    animation: vanishLogo 1.5s ease forwards .5s;
     
 }
 .quran-video{
